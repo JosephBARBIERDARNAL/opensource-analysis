@@ -10,7 +10,7 @@ This document is an analysis of data from the 2024 Open Source Survey, made by G
 
 My goal is primarly to explore how people feel about open source in general, without being exhaustive. I try to keep things as simple as possible in order for anyone to retrieve insight from this page.
 
-The website is based on `Quarto`. The analysis is mainly conducted using `polars` and `matplotlib`. The site is open source.
+The website is based is [open source](https://github.com/JosephBARBIERDARNAL/opensource-analysis) and is based on `Quarto`. The analysis is mainly conducted using `polars` and `matplotlib`.
 
 
 ```{python}

@@ -174,10 +174,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>This document is an analysis of data from the 2024 Open Source Survey, made by Github. You can learn more about data collection, survey design etc at <a href="https://github.com/github/open-source-survey">this address</a>.</p>
 <p>My goal is primarly to explore how people feel about open source in general, without being exhaustive. I try to keep things as simple as possible in order for anyone to retrieve insight from this page.</p>
-<p>The website is based on <code>Quarto</code>. The analysis is mainly conducted using <code>polars</code> and <code>matplotlib</code>. The site is open source.</p>
+<p>The website is based is <a href="https://github.com/JosephBARBIERDARNAL/opensource-analysis">open source</a> and is based on <code>Quarto</code>. The analysis is mainly conducted using <code>polars</code> and <code>matplotlib</code>.</p>
 <section id="preliminary-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="preliminary-analysis">Preliminary analysis</h2>
-<div id="3ccb9c9d" class="cell" data-execution_count="2">
+<div id="4f4fbce0" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>age_df <span class="op">=</span> df[<span class="st">"LIKERT.AGE"</span>].value_counts()</span>

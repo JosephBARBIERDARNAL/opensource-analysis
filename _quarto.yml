@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  preview: 
+    port: 3000
 
 website:
   title: "opensource-analysis"

@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Analysis of the Open Source Survey 2024",
     "section": "",
-    "text": "This document is an analysis of data from the 2024 Open Source Survey, made by Github. You can learn more about data collection, survey design etc at this address.\nMy goal is primarly to explore how people feel about open source in general, without being exhaustive. I try to keep things as simple as possible in order for anyone to retrieve insight from this page.\nThe website is based on Quarto. The analysis is mainly conducted using polars and matplotlib. The site is open source."
+    "text": "This document is an analysis of data from the 2024 Open Source Survey, made by Github. You can learn more about data collection, survey design etc at this address.\nMy goal is primarly to explore how people feel about open source in general, without being exhaustive. I try to keep things as simple as possible in order for anyone to retrieve insight from this page.\nThe website is based is open source and is based on Quarto. The analysis is mainly conducted using polars and matplotlib."
   },
   {
     "objectID": "index.html#preliminary-analysis",
