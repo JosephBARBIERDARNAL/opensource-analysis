@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Analysis of the Open Source Survey 2024",
+    "section": "",
+    "text": "This document is an analysis of data from the 2024 Open Source Survey, made by Github. You can learn more about data collection, survey design etc at this address.\nMy goal is primarly to explore how people feel about open source in general, without being exhaustive. I try to keep things as simple as possible in order for anyone to retrieve insight from this page.\nThe website is based on Quarto. The analysis is mainly conducted using polars and matplotlib. The site is open source."
+  },
+  {
+    "objectID": "index.html#preliminary-analysis",
+    "href": "index.html#preliminary-analysis",
+    "title": "Analysis of the Open Source Survey 2024",
+    "section": "Preliminary analysis",
+    "text": "Preliminary analysis\n\n\nShow code\nage_df = df[\"LIKERT.AGE\"].value_counts()\n\nn_noresponse = age_df.row(by_predicate=(pl.col(\"LIKERT.AGE\") == \"No Response\"))[1]\nnoresponse_rate = n_noresponse / len(df) * 100\n\nage_df = age_df.sort(\"LIKERT.AGE\")\nage_df = age_df.filter(pl.col(\"LIKERT.AGE\") != \"No Response\")\n\nfig, ax = plt.subplots()\n\nax.barh(age_df[\"LIKERT.AGE\"], age_df[\"count\"], height=0.7)\nax.spines[[\"top\", \"right\", \"bottom\", \"left\"]].set_visible(False)\nax.tick_params(size=0, labelcolor=\"white\", labelsize=7)\nax.set_xticks([])\n\nfor i, row in enumerate(age_df.iter_rows()):\n    value = row[1]\n    if value &gt; 100:\n        adjustment = -50\n        color = \"black\"\n        ha = \"right\"\n    else:\n        adjustment = 20\n        color = \"white\"\n        ha = \"left\"\n    ax.text(\n        x=value + adjustment,\n        y=i,\n        s=f\"{value}\",\n        va=\"center\",\n        color=color,\n        ha=ha,\n        size=9,\n    )\n\nfig.text(\n    x=0.9, y=0.8, s=\"Age repartition of respondants\", ha=\"right\", size=16, color=\"white\"\n)\nfig.text(\n    x=0.9,\n    y=0.75,\n    s=f\"Note: no data for {noresponse_rate:.1f}% of respondents\",\n    ha=\"right\",\n    size=8,\n    color=\"#838282\",\n)\n\ntext_style = dict(\n    color=\"#f0f0f0\",\n    va=\"top\",\n    size=5,\n    y=0.1,\n)\nfig.text(\n    x=0.9,\n    s=\"The Open Source Survey - 2024\\nData by Github. Graph by Joseph Barbier\",\n    ha=\"right\",\n    **text_style,\n)\n\nfig.savefig(\"img/age-repartition.png\", dpi=300, bbox_inches=\"tight\")\nplt.close()"
+  }
+]
