@@ -1,0 +1,15 @@
+[project]
+name = "analysis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "highlight-text>=0.2",
+    "matplotlib>=3.10.0",
+    "nbclient>=0.10.2",
+    "nbformat>=5.10.4",
+    "polars>=1.22.0",
+    "pyfonts>=0.0.2",
+    "pyyaml>=6.0.2",
+]
